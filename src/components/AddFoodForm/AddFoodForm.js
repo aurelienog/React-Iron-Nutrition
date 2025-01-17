@@ -28,7 +28,7 @@ export default function AddFoodForm({addFood}) {
   }
 
   return (
-    <form className='w-[80%] mx-auto'>
+    <form className='w-[80%] mx-auto' onSubmit={handleSubmit}>
       <div className=' flex flex-col'>
         <label htmlFor="name">Name</label>
         <Input value={food.name} type="text" name="name" id="name" onChange={handleChange} className='border rounded-sm'/>
@@ -49,7 +49,7 @@ export default function AddFoodForm({addFood}) {
         <Input value={food.servings} type="number" onChange={handleChange} id="servings" name="servings" className='border rounded-sm' />
       </div>
 
-      <button type='submit' onSubmit={handleSubmit} className='bg-gray-300 px-6 py-2 rounded-sm my-4'>Create</button>
+      <button type='submit' className='bg-gray-300 px-6 py-2 rounded-sm my-4'>Create</button>
 
     </form>
   )

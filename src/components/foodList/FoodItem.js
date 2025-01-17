@@ -1,16 +1,18 @@
 import React from 'react'
 
-function FoodBox({image, calories, servings}) {
+function FoodBox({food, onDeleteFood}) {
+
+
   return (
     <div>
-      <img src={image} alt="" className='object-cover  h-32'/>
-      <p className='leading-10'>Calories: {calories}
+      <img src={food.image} alt="" className='object-cover  h-32'/>
+      <p className='leading-10'>Calories: {food.calories}
         <br></br> 
-        Servings: <span className='font-bold'>{servings}</span>
+        Servings: <span className='font-bold'>{food.servings}</span>
         <br></br> 
-        <span className='font-bold'>Total calories: {calories}</span> kcal
+        <span className='font-bold'>Total calories: {food.calories}</span> kcal
       </p>
-      <button className='px-6 py-2 rounded-md bg-blue-600 text-white'>Delete</button>
+      <button onClick={() => (onDeleteFood(food))} className='px-6 py-2 rounded-md bg-blue-600 text-white'>Delete</button>
     </div>
 
 
