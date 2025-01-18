@@ -8,6 +8,7 @@ import Search from "./components/search/Search";
 function App() {
   const [foods, setFoods] = useState([]);
   const [allFoods, setAllFoods] = useState([]);
+  const [form, setForm] = useState(false);
 
   useEffect(() => {
     setFoods(foodsDb);
@@ -30,12 +31,11 @@ function App() {
     setAllFoods((prev) => prev.filter(f => f != food))
   }
 
-
   return (
     <div className="App">
-
-      <AddFoodForm addFood={addFood}/>
-
+      {form ? <AddFoodForm addFood={addFood}/> : null }
+      <button onClick={() => setForm(!form)} className="border border-blue-400 text-blue-400 rounded-sm p-2 ml-[10%] mt-4"> 
+      {form ? "hide form" : "Add New Food"} </button>
       <Search addFilter={addFilter}/>
       <FoodList foods = {foods} onDeleteFood={onDeleteFood}/>
     </div>

@@ -52,5 +52,5 @@ export default function AddFoodForm({addFood}) {
       <button type='submit' className='bg-gray-300 px-6 py-2 rounded-sm my-4'>Create</button>
 
     </form>
-  )
+    )  
 }
